@@ -1,14 +1,16 @@
-// import React from 'react';
+import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import Auth from './auth';
+import WithoutAuthentication from './withoutAuthentication';
 import App from './app';
+import {isLogged} from '../middlewares/auth'
+
 
 const Routes = () => {
-    const logged = true;
+    const logged = isLogged();
     return (
         <BrowserRouter>
-            { logged ? <App /> : <Auth/> }
+            { logged ? <App /> : <WithoutAuthentication/> }
         </BrowserRouter>
     );
 }

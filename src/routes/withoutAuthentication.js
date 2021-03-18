@@ -3,10 +3,12 @@ import { Switch, Route } from 'react-router-dom';
 
 import Login from '../pages/Login';
 
-const AuthRoutes = () => (
+const WithoutAuthentication = () => (
     <Switch>
-        <Route path="/" component={Login} />
+        <Route>
+            <Login />
+        </Route>
     </Switch>
 );
 
-export default AuthRoutes;
+export default WithoutAuthentication;
